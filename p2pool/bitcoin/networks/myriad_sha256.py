@@ -11,10 +11,10 @@ P2P_PREFIX = 'af4576ee'.decode('hex')
 P2P_PORT = 10888
 ADDRESS_VERSION = 50
 RPC_PORT = 10889
-RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            (yield helper.check_genesis_block(bitcoind, '00000ffde4c020b5938441a0ea3d314bf619eff0b38f32f78f7583cffa1ea485')) and
+        RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+            'myriadcoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
-        ))
+        )),
 SUBSIDY_FUNC = lambda height: 1000*2000000000000 >> (height + 1)//967680,
 POW_FUNC = data.hash256
 BLOCK_PERIOD = 60 # s
