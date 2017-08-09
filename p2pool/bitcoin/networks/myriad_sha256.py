@@ -15,7 +15,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             (yield helper.check_genesis_block(bitcoind, '00000ffde4c020b5938441a0ea3d314bf619eff0b38f32f78f7583cffa1ea485')) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         ))
-SUBSIDY_FUNC = lambda height: 1000*2000000000000 >> (height + 1)//967680
+SUBSIDY_FUNC = lambda height: 1000*2000000000000 >> (height + 1)//967680,
 POW_FUNC = data.hash256
 BLOCK_PERIOD = 300 # s
 SYMBOL = 'XMY'
