@@ -17,7 +17,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
         ))
 SUBSIDY_FUNC = lambda height: 1000*2000000000000 >> (height + 1)//967680,
 POW_FUNC = data.hash256
-BLOCK_PERIOD = 300 # s
+BLOCK_PERIOD = 60 # s
 SYMBOL = 'XMY'
 CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'myriadcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/myriadcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.myriadcoin'), 'myriadcoin.conf')
 BLOCK_EXPLORER_URL_PREFIX = 'http://insight-myr.cryptap.us/block/'
