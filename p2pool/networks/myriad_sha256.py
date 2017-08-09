@@ -20,4 +20,4 @@ PERSIST = False
 WORKER_PORT = 5589
 BOOTSTRAP_ADDRS = 'nz.nutty.one'.split(' ')
 VERSION_CHECK = lambda v: None if 90216 <= v else 'Myriad version too old. Upgrade to 0.9.2.16 or newer!'
-ALGORITHM = 'SHA256'
+ALGORITHM = 'SHA256d'
